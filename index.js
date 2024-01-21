@@ -1,4 +1,3 @@
-"use strict";
 
 const crearProyecto = (proyectos) => {
   for (const proyecto of proyectos) {
@@ -23,12 +22,12 @@ const crearProyecto = (proyectos) => {
     document.body.appendChild(contenedorProyecto);
   }
 }
-const crearBotones = (proyecto, contenedorProyecto) => {
-  for (let i = 0; i < proyecto.length; i++) {
+const crearBotones = (muestras, contenedorProyecto) => {
+  for (let i = 0; i < muestras.length; i++) {
     const contenedorBoton = document.createElement('div');
     contenedorBoton.classList.add('cont-button');
-    contenedorBoton.style.left = `${proyecto[0].x}px`;
-    contenedorBoton.style.top = `${proyecto[0].y}px`;
+    contenedorBoton.style.left = `${muestras[i].x}px`;
+    contenedorBoton.style.top = `${muestras[i].y}px`;
     
     const glob = document.createElement('span');
     glob.classList.add('glob');
@@ -36,7 +35,8 @@ const crearBotones = (proyecto, contenedorProyecto) => {
     const boton = document.createElement('button');
     boton.classList.add('button-number');
     boton.textContent = '0'+1;
-    agregarEvento(boton, proyecto);
+
+    agregarEvento(boton, muestras[i], contenedorProyecto);
 
     contenedorBoton.appendChild(boton);
 
@@ -45,13 +45,27 @@ const crearBotones = (proyecto, contenedorProyecto) => {
     contenedorProyecto.appendChild(contenedorBoton);
   }
 }
-const agregarEvento = (boton, proyecto) => {
-  const muestra = document.querySelector('.cont-muestra');
+const agregarEvento = (boton, muestra, contProyecto) => {
+  const contMuestra = document.createElement('div');
+  contMuestra.classList.add('cont-muestra');
+  const imgMuestra = document.createElement('img');
+  imgMuestra.classList.add('img-muestra');
+  imgMuestra.src = muestra.img;
+
+  contMuestra.appendChild(imgMuestra);
+  contMuestra.style.position = 'absolute';
+  contMuestra.style.top = `${muestra.y-200}px`;
+  contMuestra.style.left = `${muestra.x-100}px`;
+  contProyecto.appendChild(contMuestra);
   boton.addEventListener('click', () => {
-    if (muestra.style.opacity == 1)
-      muestra.style.opacity = 0;
-    else 
-    muestra.style.opacity = 1;
+    if (contMuestra.style.opacity == '0'){
+      contMuestra.style.opacity = '1';
+
+    }
+    else {
+      contMuestra.style.opacity = '0';
+
+    } 
   });
 }
 

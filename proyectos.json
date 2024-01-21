@@ -4,8 +4,8 @@
     "muestras" : [
       {
         "img": "./Imágenes/Fuente.jpeg",
-        "x" : "370",
-        "y" : "590",
+        "x" : "560",
+        "y" : "700",
         "Título" : "Lorem ipsum dolor",
         "Descripcion" : "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"
       }
