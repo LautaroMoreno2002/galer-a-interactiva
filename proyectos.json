@@ -1,0 +1,15 @@
+[
+ {
+    "imgProyecto" : "./Imágenes/PalacioMunicipal.png",
+    "muestras" : [
+      {
+        "img": "./Imágenes/Fuente.jpeg",
+        "x" : "370",
+        "y" : "590",
+        "Título" : "Lorem ipsum dolor",
+        "Descripcion" : "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"
+      }
+    ],
+    "Descripcion" : "Lorem ipsum dolor sit amet Lore lorem, consectetur Lorem ipsum dolor sit am lorem, consectetur Lorem ipsum dolor sit am lorem, consectetur Lorem ipsum dolor sit am" 
+ }
+]

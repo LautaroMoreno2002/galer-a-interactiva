@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+}
+.cont-img {
+  display: flex;
+  background-color: #ccc;
+  height: 700px;  
+}
+.img-municipio {
+  max-width: 1000px;
+  object-fit: contain;
+}
+.cont-button {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-number {
+  text-align: center;
+  padding: 15px;
+  border-radius: 50%;
+}
+.glob {
+  margin-top: 3px;
+  width: 3px;
+  padding: 3px;
+  color: black;
+  background-color: azure;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+.cont-button:hover > .button-number{
+  background-color: black;
+  color: #fff;
+}
+.button-number_Encendido{
+  background-color: black;
+  color: #fff;
+}
+.cont-button:hover > .button-number_Encendido:hover {
+  color: black;
+  background-color: azure;
+}
+.glob_Encendido {
+  background-color: black;
+}
+.cont-muestra {
+  position: absolute;
+  width: 220px;
+  height: 170px;
+  border: 3px dotted black;
+  top: 410px;
+  left: 290px;
+  opacity: 0;
+  transition: .5s opacity ease;
+}
+.img-muestra {
+  width: 220px;
+  height: 170px;
+}
+.cont-text {
+  width: 600px;
+  height: 300px;
+  left: 400px;
+  top: 600px;
+  border: 4px solid black;
+  position: absolute;
+}
