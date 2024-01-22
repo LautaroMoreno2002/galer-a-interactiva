@@ -34,7 +34,11 @@ const crearBotones = (muestras, contenedorProyecto) => {
 
     const boton = document.createElement('button');
     boton.classList.add('button-number');
-    boton.textContent = '0'+1;
+
+    if (i < 10)
+      boton.textContent = `0${i+1}`;
+    else 
+      boton.textContent = `${i+1}`;
 
     agregarEvento(boton, muestras[i], contenedorProyecto);
 
@@ -50,21 +54,25 @@ const agregarEvento = (boton, muestra, contProyecto) => {
   contMuestra.classList.add('cont-muestra');
   const imgMuestra = document.createElement('img');
   imgMuestra.classList.add('img-muestra');
-  imgMuestra.src = muestra.img;
+  imgMuestra.src = muestra.img[0];
 
   contMuestra.appendChild(imgMuestra);
   contMuestra.style.position = 'absolute';
-  contMuestra.style.top = `${muestra.y-200}px`;
-  contMuestra.style.left = `${muestra.x-100}px`;
+  contMuestra.style.top = `${muestra.y-270}px`;
+  contMuestra.style.left = `${muestra.x-150}px`;
   contProyecto.appendChild(contMuestra);
+
+  const tituloMuestra = document.querySelector('.titulo-muestra');
+  const descripcionMuestra = document.querySelector('.descripcion');
+
   boton.addEventListener('click', () => {
     if (contMuestra.style.opacity == '0'){
       contMuestra.style.opacity = '1';
-
+      tituloMuestra.textContent = muestra.titulo;
+      descripcionMuestra.textContent = muestra.descripcion;
     }
     else {
       contMuestra.style.opacity = '0';
-
     } 
   });
 }

@@ -1,15 +1,42 @@
 [
  {
-    "imgProyecto" : "./Imágenes/PalacioMunicipal.png",
+    "imgProyecto" : "./Proyectos/Proyecto1/DJI_0799.jpg",
     "muestras" : [
       {
-        "img": "./Imágenes/Fuente.jpeg",
-        "x" : "560",
-        "y" : "700",
-        "Título" : "Lorem ipsum dolor",
-        "Descripcion" : "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"
+        "img": [
+          "./Proyectos/Proyecto1/DJI_0772.jpg"
+        ],
+        "x" : "400",
+        "y" : "450",
+        "titulo" : "Sector de juegos infantiles",
+        "descripcion" : "Consiste en un amplio y seguro espacio para que los más pequeños puedan divertirse."
+      }, {
+        "img": [
+          "./Proyectos/Proyecto1/_MG_4043.jpg"
+        ],
+        "x" : "600",
+        "y" : "650",
+        "titulo" : "Sector familiar",
+        "descripcion" : "Cuenta con mesas y bancos para el esparcimiento de las familias."
+      }, {
+        "img": [
+          "./Proyectos/Proyecto1/_MG_4059.jpg",
+          "./Proyectos/Proyecto1/_MG_4083.jpg"
+        ],
+        "x" : "1100",
+        "y" : "400",
+        "titulo" : "Sector de calistenia y cancha de básquet",
+        "descripcion" : "Este sector busca fomentar la recreación y el deporte en todas las edades."
+      }, {
+        "img": [
+          "./Proyectos/Proyecto1/_MG_3878.jpg"
+        ],
+        "x" : "220",
+        "y" : "600",
+        "titulo" : "Sector saludable",
+        "descripcion" : "Remos, bicicletas fijas y fortalecedor de piernas."
       }
     ],
-    "Descripcion" : "Lorem ipsum dolor sit amet Lore lorem, consectetur Lorem ipsum dolor sit am lorem, consectetur Lorem ipsum dolor sit am lorem, consectetur Lorem ipsum dolor sit am" 
+    "descripcion" : ""
  }
 ]

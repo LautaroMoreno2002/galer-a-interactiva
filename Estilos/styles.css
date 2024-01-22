@@ -55,14 +55,14 @@ body {
   transition: .5s opacity ease;
 }
 .img-muestra {
-  width: 250px;
-  height: 180px;
+  width: 330px;
+  height: 250px;
 }
 .cont-text {
   width: 600px;
   height: 400px;
-  left: 900px;
-  top: 500px;
+  left: 1200px;
+  top: 700px;
   position: absolute;
   background-color: #fff;
   padding: 20px;
