@@ -42,14 +42,23 @@ const crearBotones = (muestras, contenedorProyecto) => {
 const agregarEvento = (boton, muestra, contProyecto) => {
   const contMuestra = document.createElement('div');
   contMuestra.classList.add('cont-muestra');
-  const imgMuestra = document.createElement('img');
-  imgMuestra.classList.add('img-muestra');
-  imgMuestra.setAttribute('loading','lazy');
-  imgMuestra.src = muestra.img[0];
-  contMuestra.appendChild(imgMuestra);
   contMuestra.style.position = 'absolute';
   contMuestra.style.top = `${muestra.y-290}px`;
   contMuestra.style.left = `${muestra.x-150}px`;
+  const imgMuestra = document.createElement('img');
+  imgMuestra.classList.add('img-muestra');
+  imgMuestra.src = muestra.img[0];
+  if (muestra.img.length > 1) {
+    const boton1 = document.createElement('button');
+    const boton2 = document.createElement('button');
+    boton1.textContent = '<', boton2.textContent = '>', boton1.classList.add('anterior'), boton2.classList.add('siguiente');
+    asignarEventoBotonesGaleria(boton1, boton2, imgMuestra, muestra.img);
+    contMuestra.appendChild(boton1);
+    contMuestra.appendChild(imgMuestra);
+    contMuestra.appendChild(boton2);
+    contMuestra.classList.add('mini-galeria');
+  }
+  else contMuestra.appendChild(imgMuestra);
   contProyecto.appendChild(contMuestra);
   boton.addEventListener('click', () => {
     if (contMuestra.style.opacity == '0') {
@@ -58,9 +67,25 @@ const agregarEvento = (boton, muestra, contProyecto) => {
       tituloMuestra.textContent = muestra.titulo;
       descripcionMuestra.textContent = muestra.descripcion;
     }
-    else contMuestra.style.opacity = '0';
+    else {
+      contMuestra.style.opacity = '0';
+    }
   });
 }
+const asignarEventoBotonesGaleria = (boton1, boton2, imgMuestra, imagenes) => {
+  let currentImageIndex = 0;
+  boton1.addEventListener('click', () => {
+    currentImageIndex--;
+    if (currentImageIndex < 0) currentImageIndex = imagenes.length-1;
+    imgMuestra.src = imagenes[currentImageIndex];
+  });
+  boton2.addEventListener('click', () => {
+    currentImageIndex++;
+    if (currentImageIndex > imagenes.length-1) currentImageIndex = 0;
+    imgMuestra.src = imagenes[currentImageIndex];
+  });
+}
+
 fetch('./proyectos.json')
     .then(response => {
       return response.json();
