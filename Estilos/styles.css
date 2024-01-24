@@ -46,7 +46,7 @@ body {
   background-color: black;
 }
 .cont-muestra {
-  background-color: black;
+  background-color: #222;
   padding: 10px 10px 9px 10px;
   position: absolute;
   opacity: 0;
