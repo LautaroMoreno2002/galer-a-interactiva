@@ -7,7 +7,7 @@ body {
   height: 800px;  
 }
 .img-municipio {
-  width: 1500px;
+  min-width: 1500px;
   object-fit: contain;
 }
 .cont-button {
@@ -46,24 +46,34 @@ body {
   background-color: black;
 }
 .cont-muestra {
+  background-color: black;
+  padding: 10px 10px 9px 10px;
   position: absolute;
-  width: 220px;
-  height: 170px;
-  top: 410px;
-  left: 290px;
   opacity: 0;
   transition: .5s opacity ease;
+}
+.cont-muestra:first-child {
+  opacity: 1;
 }
 .img-muestra {
   width: 330px;
   height: 250px;
 }
 .cont-text {
+  text-align: center;
   width: 600px;
-  height: 400px;
+  height: 300px;
   left: 1200px;
-  top: 700px;
+  top: 600px;
   position: absolute;
   background-color: #fff;
   padding: 20px;
+  border: 2px solid grey;
+}
+.titulo-muestra {
+  font-size: 2em;
+}
+.descripcion {
+  font-size: 1.5em;
+  padding: 1.5em;
 }

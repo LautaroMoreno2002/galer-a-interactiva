@@ -1,3 +1,5 @@
+const tituloMuestra = document.querySelector('.titulo-muestra');
+const descripcionMuestra = document.querySelector('.descripcion');
 
 const crearProyecto = (proyectos) => {
   for (const proyecto of proyectos) {
@@ -11,7 +13,7 @@ const crearProyecto = (proyectos) => {
     
     const imgProyect = document.createElement('img');
     imgProyect.src = proyecto.imgProyecto;
-    imgProyect.alt = 'Palacio Municipal Malvinas Argentinas';
+    imgProyect.alt = proyecto.descripcion;
     imgProyect.classList.add('img-municipio');
   
   
@@ -48,25 +50,28 @@ const crearBotones = (muestras, contenedorProyecto) => {
 
     contenedorProyecto.appendChild(contenedorBoton);
   }
+
+  tituloMuestra.textContent = muestras[0].titulo;
+  descripcionMuestra.textContent = muestras[0].descripcion;
+
 }
 const agregarEvento = (boton, muestra, contProyecto) => {
   const contMuestra = document.createElement('div');
   contMuestra.classList.add('cont-muestra');
   const imgMuestra = document.createElement('img');
   imgMuestra.classList.add('img-muestra');
+  imgMuestra.setAttribute('loading','lazy');
   imgMuestra.src = muestra.img[0];
 
   contMuestra.appendChild(imgMuestra);
   contMuestra.style.position = 'absolute';
-  contMuestra.style.top = `${muestra.y-270}px`;
+  contMuestra.style.top = `${muestra.y-290}px`;
   contMuestra.style.left = `${muestra.x-150}px`;
   contProyecto.appendChild(contMuestra);
 
-  const tituloMuestra = document.querySelector('.titulo-muestra');
-  const descripcionMuestra = document.querySelector('.descripcion');
-
   boton.addEventListener('click', () => {
     if (contMuestra.style.opacity == '0'){
+      document.querySelectorAll('.cont-muestra').forEach(img => img.style.opacity = '0');
       contMuestra.style.opacity = '1';
       tituloMuestra.textContent = muestra.titulo;
       descripcionMuestra.textContent = muestra.descripcion;
@@ -76,8 +81,6 @@ const agregarEvento = (boton, muestra, contProyecto) => {
     } 
   });
 }
-
-// crearProyecto(proyectos[0]);
 fetch('./proyectos.json')
     .then(response => {
       return response.json();
